@@ -1,0 +1,11 @@
+<ion-tabs selectedIndex="2">
+        <ion-tab (ionSelect)="NotipresentToast()" class="text_color" tabIcon="notifications"></ion-tab>
+        <ion-tab [root]="users"  class="text_color" tabIcon="list"></ion-tab>
+        <ion-tab [root]="home"></ion-tab>
+
+        <ion-fab center bottom>
+   <button ion-fab class="bg" (click)="closeFab()"><ion-icon name="home"></ion-icon></button>
+ </ion-fab>
+        <ion-tab  (ionSelect)="UserpresentToast()" class="text_color" tabIcon="contact"></ion-tab>
+        <ion-tab [root]="organisations"  class="text_color" tabIcon="code"></ion-tab>
+</ion-tabs>

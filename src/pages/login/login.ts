@@ -37,14 +37,14 @@ export class LoginPage {
               confirmationResult.confirm(data.confirmationCode)
                 .then(function (result) {
                   // User signed in successfully.
-                  
-                  this.app.getActiveNav().popToRoot();
+
                   this.navCtrl.push(HomePage);
                   console.log(result.user);
                   // ...
                 }).catch(function (error) {
                   // User couldn't sign in (bad verification code?)
                   // ...
+                  alert("Wrong code entered");
                 });
             }
           }

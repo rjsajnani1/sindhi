@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the OrganisationsPage page.
@@ -14,11 +15,23 @@ import { NavController } from 'ionic-angular';
 })
 export class OrganisationsPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
     console.log('Hello Organisations Page');
   }
+  presentToast() {
+    const toast = this.toastCtrl.create({
+      message: 'Coming Soon',
+      duration: 2000,
+      position: 'middle'
+    });
 
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+
+    toast.present();
+  }
 }

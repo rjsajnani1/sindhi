@@ -2,5 +2,8 @@ page-login {
     ion-item {
       margin-bottom: 32px !important;
     }
-
+    .login {
+    	background-image: url('../assets/images/bg_img.png');
+    	background-size: cover;
+    }
 }

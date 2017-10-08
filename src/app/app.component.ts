@@ -6,10 +6,10 @@ import firebase from 'firebase';
 
 // import { StatusBar } from '@ionic-native/status-bar';
 
-import { ReposPage } from '../pages/repos/repos';
-import { UsersPage } from '../pages/users/users';
-import { OrganisationsPage } from '../pages/organisations/organisations';
 import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
+
+
 
 @Component({
   templateUrl: 'app.html'
@@ -19,7 +19,7 @@ export class MyApp {
  @ViewChild(Nav) nav: Nav;
 
   // make UsersPage the root (or first) page
-  rootPage: any = UsersPage;
+  rootPage: any = TabsPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform,  public menu: MenuController) {
@@ -27,9 +27,10 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Users', component: UsersPage },
-      { title: 'Repos', component: ReposPage },
-      { title: 'Organisations', component: OrganisationsPage },
+      { title: 'Home', component: TabsPage },
+      { title: 'Users', component: TabsPage },
+      { title: 'Repos', component: TabsPage },
+      { title: 'Organisations', component: TabsPage },
     ];
     const firebaseConfig = {
       apiKey: "AIzaSyCOsB4iBoNeQuwF3Ym00EgikBHooWi2Zw8",
@@ -41,15 +42,15 @@ export class MyApp {
     };
     firebase.initializeApp(firebaseConfig);
 
-    const unsubscribe = firebase.auth().onAuthStateChanged( user => {
-      if (user){
-        this.rootPage = HomePage;
-        unsubscribe();
-      } else {
-        this.rootPage = 'LoginPage';
-        unsubscribe();
-      }
-    });
+    // const unsubscribe = firebase.auth().onAuthStateChanged( user => {
+    //   if (user){
+    //     this.rootPage = HomePage;
+    //     unsubscribe();
+    //   } else {
+    //     this.rootPage = 'LoginPage';
+    //     unsubscribe();
+    //   }
+    // });
 
   }
 
@@ -61,7 +62,6 @@ export class MyApp {
     // statusBar.backgroundColorByHexString("#13204c");
     });
   }
-
   openPage(page) {
     // close the menu when clicking a link from the menu
     this.menu.close();

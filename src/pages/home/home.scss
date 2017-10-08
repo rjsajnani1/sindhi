@@ -1,3 +1,54 @@
 page-home {
+  .navbar1{
+    background-image: url('../assets/images/navbar.png');
+    background-size: cover;
 
+  }
+  .header-md{
+    &:after{
+      display: none;
+    }
+  }
+  .ion-slides{
+    height: auto;
+  }
+  .overlay_text{
+    position: absolute;
+bottom: -14px;
+background: rgba(255, 255, 255, 0.67);
+width: 100%;
+text-align: left;
+padding: 5px;
+  }
+  ion-card img{
+    width: auto;
+  }
+}
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 37%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 53%;
+    width: 100%;
+    color: #fff;
+  }
+
+}
+.no-padding{
+  padding: 0 !important;
 }

@@ -9,6 +9,8 @@ import { GithubUsers } from '../providers/github-users';
 import { HttpModule } from '@angular/http';
 import {UserDetails } from '../pages/user-details/user-details';
 import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +19,13 @@ import { HomePage } from '../pages/home/home';
     UsersPage,
     ReposPage,
     OrganisationsPage,
-    UserDetails
+    UserDetails,
+    TabsPage
 
   ],
   imports: [
      BrowserModule,HttpModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{tabPlacement:'bottom'}),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -31,7 +34,8 @@ import { HomePage } from '../pages/home/home';
     UsersPage,
     ReposPage,
     OrganisationsPage,
-    UserDetails
+    UserDetails,
+    TabsPage
   ],
   providers: [GithubUsers]
 })

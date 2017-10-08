@@ -14,3 +14,73 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-slides{
+  height: auto;
+}
+.navbar1{
+  background-image: url('../assets/images/navbar.png');
+  background-size: cover;
+}
+.header-md{
+  border-bottom: 2px solid #d90647;
+  &:after{
+    display: none;
+  }
+}
+$white:      #fff;
+
+.toolbar-title-md{
+  text-align: center;
+}
+.tabs-md .tab-button-icon{
+  // background: -webkit-linear-gradient(top, #d90647 1%,#d90647 1%,#d90647 5%,#eb402c 100%) !important;
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  color: #666; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d90647', endColorstr='#eb402c',GradientType=0 ); /* IE6-9 */
+
+}
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon{
+  color: #d90647; /* Old browsers */
+  color: -moz-linear-gradient(top, #d90647 1%, #d90647 1%, #d90647 5%, #eb402c 100%); /* FF3.6-15 */
+  color: -webkit-linear-gradient(top, #d90647 1%,#d90647 1%,#d90647 5%,#eb402c 100%); /* Chrome10-25,Safari5.1-6 */
+  color: linear-gradient(to bottom, #d90647 1%,#d90647 1%,#d90647 5%,#eb402c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d90647', endColorstr='#eb402c',GradientType=0 ); /* IE6-9 */
+
+}
+.tabbar{
+  background: $white !important;
+}
+.bg{
+  // background: -webkit-linear-gradient(top, #d90647 1%,#d90647 1%,#d90647 5%,#eb402c 100%) !important;
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  background:  #d90647 ; /* Old browsers */
+  background: -moz-linear-gradient(top, #d90647 1%, #d90647 1%, #d90647 5%, #eb402c 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d90647 1%,#d90647 1%,#d90647 5%,#eb402c 100%); /* Chrome10-25,Safari5.1-6 */
+  background:  linear-gradient(to bottom, #d90647 1%,#d90647 1%,#d90647 5%,#eb402c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d90647', endColorstr='#eb402c',GradientType=0 ); /* IE6-9 */
+
+}
+.back-button{
+  color: $white !important;
+}
+.item > ion-icon, .item-inner > ion-icon{
+  color: #d90647; /* Old browsers */
+
+}
+.text_color{
+  color: #d90647; /* Old browsers */
+
+}
+.toolbar-background{
+  background-color: $white;
+  color: #000;
+}
+.card-md {
+    border-radius: 2px;
+    width: calc(50% - 20px);
+    h1{
+      font-size: 1.5rem;
+    }
+}

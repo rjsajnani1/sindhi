@@ -1,14 +1,58 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar >
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-navbar>
 </ion-header>
+<ion-content class="home" >
+  <ion-slides *ngIf="banners && banners.length" autoplay="2000" loop="true" speed="2000">
+   <ion-slide *ngFor="let banner of banners">
+     <img src="{{'http://139.59.37.127:3001'+banner.banner_image}}">
+     <p class="overlay_text">{{banner.description}}</p>
+   </ion-slide>
+ </ion-slides>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+ <h1 class="text_color" text-center>Commitee Members</h1>
+
+<ng-container *ngFor="let user of users">
+<div *ngIf="user.committee_member == true">
+  <ion-grid>
+    <ion-row>
+
+      <ion-col>
+        <ion-card>
+          <img (click)="goToDetails(user.id)"  *ngIf="user.address_type == 'Ms.' " src="assets/images/Amy_Jones.jpg">
+          <img *ngIf="user.address_type == 'Mr.' " src="assets/images/James_King.jpg">
+         <ion-card-content (click)="goToDetails(user.id)">
+           <ion-card-title>
+             <h1 *ngIf="user.committee_member">{{user.name}}</h1>
+             </ion-card-title>
+         </ion-card-content>
+         <ion-row>
+        <ion-col class="no-padding">
+          <button ion-button icon-center  clear default (click)="presentToast()">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col class="no-padding">
+          <button ion-button icon-center  clear default (click)="presentToast()">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col class="no-padding">
+          <button ion-button icon-center clear default (click)="presentToast()">
+            <ion-icon name="call"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+       </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+</ng-container>
 </ion-content>

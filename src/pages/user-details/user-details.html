@@ -1,20 +1,19 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>{{user?.name}}'s details</ion-title>
+  <ion-navbar class="userdetails_bg" transparent>
+    <ion-title></ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="cards-bg social-cards">
-<ion-card>
-  <ion-item>
-    <ion-avatar item-start>
-      <img *ngIf="user?.address_type == 'Ms.' " src="assets/images/Amy_Jones.jpg">
-      <img *ngIf="user?.address_type == 'Mr.' " src="assets/images/James_King.jpg">
-    </ion-avatar>
-    <h2>{{user?.address_type}}{{user?.name}}</h2>
-    <p>Member Type: {{user?.member_type}}</p>
-  </ion-item>
-  <ion-card-content>
+<ion-content  class="cards-bg social-cards">
+
+    <div class="bg padding">
+      <ion-avatar item-start >
+        <img *ngIf="user?.address_type == 'Ms.' " src="assets/images/Amy_Jones.jpg">
+        <img *ngIf="user?.address_type == 'Mr.' " src="assets/images/James_King.jpg">
+      </ion-avatar>
+      <h2>{{user?.address_type}}{{user?.name}}</h2>
+      <!-- <p>Member Type: {{user?.member_type}}</p> -->
+    </div>
     <ion-list>
       <ion-item>
         <ion-icon ios="ios-pin" md="md-pin" item-left></ion-icon>
@@ -22,32 +21,28 @@
           <p *ngIf="user?.address_two">{{user?.address_two}},</p>
           <p *ngIf="user?.address_three">{{user?.address_three}}</p>
           <p *ngIf="user?.area">{{user?.area}}</p>
-          <p *ngIf="">{{user?.city}}-{{user?.pincode}}</p>
+          <p *ngIf="user?.city">{{user?.city}}-{{user?.pincode}}</p>
       </ion-item>
       <ion-item>
-        <ion-icon ios="ios-call" md="md-call" item-left></ion-icon>
+        <ion-icon class="text_color" ios="ios-call" md="md-call" item-left></ion-icon>
           <p>{{user?.mobile_one}}</p>
       </ion-item>
+      <ion-item *ngIf="user?.email">
+        <ion-icon ios="ios-mail" md="md-mail" item-left></ion-icon>
+        <p>{{user?.email}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon ios="ios-briefcase" md="md-briefcase" item-left></ion-icon>
+        <p>Membership Type: {{user?.member_type}}</p>
+      </ion-item>
     </ion-list>
-   </ion-card-content>
-  <ion-row>
-    <ion-col>
-      <button ion-button color="primary" clear small icon-start>
-        <ion-icon name='thumbs-up'></ion-icon>
-        12 Likes
-      </button>
-    </ion-col>
-    <ion-col>
-      <button ion-button color="primary" clear small icon-start>
-        <ion-icon name='text'></ion-icon>
-        4 Comments
-      </button>
-    </ion-col>
-    <ion-col align-self-center text-center>
-      <ion-note>
-        11h ago
-      </ion-note>
-    </ion-col>
-  </ion-row>
-</ion-card>
+    <ion-fab bottom right >
+  <button ion-fab>Share</button>
+  <ion-fab-list side="top">
+    <button ion-fab (click)="sharepresentToast()">  <ion-icon name="logo-whatsapp"></ion-icon></button>
+    <button ion-fab (click)="sharepresentToast()"><ion-icon name="logo-facebook"></ion-icon></button>
+    <button ion-fab (click)="sharepresentToast()"><ion-icon name="logo-twitter"></ion-icon>
+</button>
+  </ion-fab-list>
+</ion-fab>
 </ion-content>

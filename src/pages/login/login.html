@@ -1,20 +1,19 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
-<ion-content padding>
+
+<ion-content class="login" padding>
   <div id="recaptcha-container"></div>
 
   <ion-item>
     <ion-label stacked>Phone Number</ion-label>
     <ion-input type="number" [(ngModel)]="phoneNumber"></ion-input>
   </ion-item>
-  
+  <ion-item>
+      <ion-row>
+          <ion-col><ion-item><ion-checkbox></ion-checkbox></ion-item></ion-col>
+          <ion-col><ion-item><ion-input placeholder="Option name"></ion-input></ion-item></ion-col>
+      </ion-row>
+  </ion-item>
   <button ion-button id="sign-in-button" (click)="signIn(phoneNumber)">
     Sign In
   </button>

@@ -1,3 +1,22 @@
 page-user-details {
+img{
+  height: 16vh;
+  width: auto;
+  margin: auto;
+  display: block;
+  border-radius: 50%;
+    overflow: hidden;
+  border: 5px solid $white;
+}
+h2{
+  color: $white;
+  text-align: center;
+}
+.userdetails_bg{
+  background:  #d90647 ;
 
+}
+.padding{
+  padding: 20px;
+}
 }
